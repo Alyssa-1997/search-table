@@ -3,13 +3,14 @@ var webpack = require('webpack')
 const BabiliPlugin = require("babili-webpack-plugin")
 
 module.exports = {
-  entry: './src/components/index.js',
+  entry: process.env.NODE_ENV=='development'?'./src/main.ts':'./src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'dist.js',
-    // library:'searchTable',
-    // libraryTarget:'umd',
+    filename: 'build.js',
+    library:'searchTable',
+    libraryTarget:'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
