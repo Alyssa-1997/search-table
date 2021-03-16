@@ -3,7 +3,7 @@ var webpack = require('webpack')
 const BabiliPlugin = require("babili-webpack-plugin")
 
 module.exports = {
-  entry: process.env.NODE_ENV=='development'?'./src/main.ts':'./src/index.js',
+  entry: process.env.NODE_ENV=='development'?'./src/main.ts':'./src/components/index.ts',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
